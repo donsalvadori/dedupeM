@@ -1,5 +1,3 @@
-// need to write basic input mechanism with node to input data
-// need to sort by date
 // if dates are identical data provided last in the list should be preferred
 
 
@@ -116,14 +114,19 @@ const solution = emailFilter.filter( obj =>  obj !== undefined );
 
 const datesArr = solution.map( obj => obj.entryDate );
 
-const noDuplicates = datesArr.map( (el, i) => {
-	if(i + 1 === i) {
-		delete datesArr[i];
-	}
-});
+const noDupeDate = solution.map(c => c.entryDate.valueOf() )
+															.map( (c, i, a) => i === a.indexOf(c) ? i : undefined)
+																.map(c => solution[c]).filter(c => c !== undefined);
 
-console.log(datesArr);
 
-console.log(noDuplicates);
+
+
+
+console.log('original json data:');
+console.log(json);
+console.log('===============================================');
+console.log('deduplicate json data:');
+
+console.log(noDupeDate);
 
 
