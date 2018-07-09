@@ -112,7 +112,7 @@ const emailFilter = uniqueEmail.map( email => jsonFiltered.find( obj => (email =
 const solution = emailFilter.filter( obj =>  obj !== undefined ); 
 
 
-const datesArr = solution.map( obj => obj.entryDate );
+// const datesArr = solution.map( obj => obj.entryDate );
 
 const noDupeDate = solution.map(c => c.entryDate.valueOf() )
 															.map( (c, i, a) => i === a.indexOf(c) ? i : undefined)
