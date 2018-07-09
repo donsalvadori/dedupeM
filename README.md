@@ -1,4 +1,4 @@
-# M Dedupe
+# M DEDUPE
 
 deduplicates json data based on 3 criteria:
 
@@ -10,6 +10,8 @@ select only the last object that matches on timestamp
 
 # Instructions
 
-Clone the repo and run `node marketo.js`
+Clone the repo and run 
 
-sample json data is provided within REPO
+`node marketo.js`
+
+sample json data is provided within repo
