@@ -112,15 +112,23 @@ const emailFilter = uniqueEmail.map( email => jsonFiltered.find( obj => (email =
 const solution = emailFilter.filter( obj =>  obj !== undefined ); 
 
 
-// const datesArr = solution.map( obj => obj.entryDate );
+const datesArr = solution.map( obj => obj.entryDate );
 
-const noDupeDate = solution.map(c => c.entryDate.valueOf() )
-															.map( (c, i, a) => i === a.indexOf(c) ? i : undefined)
-																.map(c => solution[c]).filter(c => c !== undefined);
-
-
+const noDupeDate = solution.map(obj => obj.entryDate.valueOf() )
+														.map( (obj, i, a) => i === a.indexOf(obj) ? i : undefined)
+															.map(obj => solution[obj]).filter(obj => obj !== undefined);
 
 
+
+// const s = new Set(), a =[]; 
+
+// const noDupeDate = solution.forEach( obj => {
+// 	if( !s.has( obj.entryDate ) ) {
+// 		s.add( obj.entryDate );
+// 	}
+// 	a.push(obj);
+// 	return a;
+// }); 
 
 console.log('original json data:');
 console.log(json);
